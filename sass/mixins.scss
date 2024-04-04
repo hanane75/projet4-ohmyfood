@@ -1,0 +1,24 @@
+// Définition du mixin pour le style du bouton texte
+@mixin boutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+    color: $color_2;
+    font-size: 16px;
+    width: 218px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-image 0.3s, box-shadow 0.3s;
+    &:hover {
+        background-image: linear-gradient(to bottom, $couleur-bouton-survol, #9356DC); // Change la couleur au survol
+        box-shadow: $ombre-portee-survol; // Ajoute l'ombre portée au survol
+      }
+}
+  
+
+  
+  
