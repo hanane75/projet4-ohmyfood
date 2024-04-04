@@ -413,7 +413,7 @@ footer i {
 }
 .menu img {
   width: 100%;
-  height: 30vh;
+  height: 30px;
   -o-object-fit: cover;
      object-fit: cover;
   display: flex;
@@ -425,9 +425,6 @@ footer i {
   border-top-right-radius: 40px;
   transform: translate(0px, -60px);
 }
-.menu-container h1 {
-  font-family: "Shrikhand", cursive;
-}
 .menu-resto {
   display: flex;
   align-items: center;
@@ -435,24 +432,15 @@ footer i {
   padding-right: 10px;
   padding-left: 10px;
 }
-.menu-resto i {
-  font-size: 24px;
-  font-weight: 400;
+.menu-resto h1 {
+  font-family: "Shrikhand", cursive;
 }
 .menu-categorie h2 {
   text-transform: uppercase;
   font-weight: 0;
-  font-size: 1.2em;
-}
-.menu-categorie h2::after {
-  content: "";
-  width: 50px;
-  height: 2px;
-  display: block;
-  position: absolute;
+  font-size: 20px;
 }
 .menu-card {
-  animation-fill-mode: both;
   background-color: #fff;
   border-radius: 20px;
   padding: 15px 20px 0 10px;
@@ -466,7 +454,6 @@ footer i {
 .menu-card_validate {
   position: absolute;
   text-align: center;
-  right: -100px;
   top: 0;
   width: 100px;
   height: 95px;
@@ -478,7 +465,7 @@ footer i {
 }
 .menu-card_validate i {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 24px;
 }
 .menu-card:hover {
   cursor: pointer;
@@ -496,16 +483,10 @@ footer i {
   width: 100%;
   transition: 0.8s ease-in-out;
 }
-.menu-card_content:hover {
-  width: calc(100% - 100px);
-  transition: 0.7s ease-in-out;
-}
 .menu-card_title h3 {
   font-family: "Roboto";
   margin: 0;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .menu-card_title p {
   margin: 0;
@@ -519,28 +500,15 @@ footer i {
   align-items: center;
   justify-content: space-between;
 }
-.menu-card_text p:nth-child(1) {
+.menu-card_text p {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu-btn {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 4em;
-  margin-bottom: 4em;
-}
-.menu-btn .btn {
-  display: block;
-  width: 100%;
-  max-width: 16em;
-}
 
 .entree {
   margin-bottom: 2.25em;
-  animation: fadein 1s linear;
   animation-delay: 0.5s;
   animation-fill-mode: both;
   padding-left: 10px;
@@ -548,14 +516,12 @@ footer i {
 
 .plats {
   margin-bottom: 2.25em;
-  animation: fadein 1s linear;
   animation-delay: 1s;
   animation-fill-mode: both;
   padding-left: 10px;
 }
 
 .dessert {
-  animation: fadein 1s linear;
   animation-delay: 1.5s;
   animation-fill-mode: both;
   padding-left: 10px;
