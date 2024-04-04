@@ -290,13 +290,7 @@ input::placeholder {
   margin: 1px 0px 8px 15px;
 }
 
-/*.fa-heart {
-    position: relative;
-    top: -50px;
-    left: 90% ;
-	width: 22px;
-	height: 21px;
-	 }*/
+/* mise en style du coeur */
 .menu-favorite {
   height: 32px;
   width: 32px;
@@ -401,8 +395,9 @@ footer i {
   align-items: center;
   width: 100%;
   gap: 42px;
+  justify-content: space-between;
 }
-.header-menu i {
+.header-menu .nav-menu i {
   margin-left: 17px;
   width: 30px;
   height: 30px;
@@ -437,6 +432,8 @@ footer i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .menu-resto i {
   font-size: 24px;
@@ -463,7 +460,7 @@ footer i {
   position: relative;
   overflow: hidden;
   z-index: 0;
-  width: 100%;
+  width: 90%;
   box-shadow: -1px 6px 10px 2px rgba(166, 166, 166, 0.34);
 }
 .menu-card_validate {
@@ -546,6 +543,7 @@ footer i {
   animation: fadein 1s linear;
   animation-delay: 0.5s;
   animation-fill-mode: both;
+  padding-left: 10px;
 }
 
 .plats {
@@ -553,12 +551,14 @@ footer i {
   animation: fadein 1s linear;
   animation-delay: 1s;
   animation-fill-mode: both;
+  padding-left: 10px;
 }
 
 .dessert {
   animation: fadein 1s linear;
   animation-delay: 1.5s;
   animation-fill-mode: both;
+  padding-left: 10px;
 }
 
 .boutton-comm {
@@ -575,6 +575,9 @@ footer i {
   border: none;
   cursor: pointer;
   transition: background-image 0.3s, box-shadow 0.3s;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 .boutton-comm:hover {
   background-image: linear-gradient(to bottom, #fface8, #9356DC);

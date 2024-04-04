@@ -277,13 +277,7 @@ input {
 .card-subtitle-rest {
 	margin: 1px 0px 8px 15px;
 }
-/*.fa-heart {
-    position: relative;
-    top: -50px;
-    left: 90% ;
-	width: 22px;
-	height: 21px;
-	 }*/
+/* mise en style du coeur */
 
 .menu-favorite {
 	height: 32px;
@@ -391,21 +385,23 @@ footer {
 		align-items: center;
 		width: 100%;
 		gap: 42px;
+        justify-content: space-between;
+        i {
+            margin-left: 17px;
+            width: 30px;
+            height: 30px;
+            font-size: 30px;
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            
+           }
+    }
 	  
   }
-   i {
-	margin-left: 17px;
-	width: 30px;
-	height: 30px;
-	font-size: 30px;
-	position: absolute;
-
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	
-   }
-  }
+   
+  
  .menu {
     margin-bottom: -60px;
     img {
@@ -414,6 +410,7 @@ footer {
       object-fit: cover;
       display: flex;
       margin: 0 auto;
+      
     }
     &-container {
       background-color: #f6f6f6;
@@ -430,6 +427,8 @@ footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-right: 10px;
+      padding-left: 10px;
   
       i {
         font-size: 24px;
@@ -464,7 +463,7 @@ footer {
       position: relative;
       overflow: hidden;
       z-index: 0;
-      width: 100%;
+      width: 90%;
       box-shadow: -1px 6px 10px 2px rgb(166 166 166 / 34%);
       &_validate {
         position: absolute;
@@ -553,20 +552,26 @@ footer {
     animation: fadein 1s linear;
     animation-delay: 0.5s;
     animation-fill-mode: both;
+    padding-left: 10px;
   }
   .plats{
     margin-bottom: 2.25em;
     animation: fadein 1s linear;
     animation-delay: 1s;
     animation-fill-mode: both;
+    padding-left: 10px;
   }
   .dessert{
     animation: fadein 1s linear;
     animation-delay: 1.5s;
     animation-fill-mode: both;
+    padding-left: 10px;
   }
 
   .boutton-comm{
     @include boutton;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
   
