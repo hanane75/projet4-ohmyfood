@@ -56,14 +56,13 @@ body {
 		  }
 	  }
 
-	  body.loading .loader-container {
-		animation: fade-out 0.5s ease-in-out forwards; /* Fade-out animation */
-	  }
+	 
 	}
 .main-container {
 	
 		width: 100%;
 		 /* Affiche le contenu après un certain délai */
+		 animation: show-content 0.5s ease-in-out forwards;
 		 @include show-content;
 	}
 	
@@ -474,6 +473,8 @@ footer {
 
     	}
     &-categorie {
+		opacity: 0;
+        transition: opacity 0.5s ease-in-out;
      
       h2 {
         text-transform: uppercase;
@@ -561,16 +562,22 @@ footer {
   }
   
   .entree{
+	@include appear;
     margin-bottom: 36px;
     padding-left: 10px;
+	animation: appear 1s ease forwards;
   }
   .plats{
+	@include appear;
     margin-bottom:36px;
     padding-left: 10px;
+	animation: appear 1s ease forwards 0.2s;
   }
   .dessert{
-    
+	@include appear;
+	animation: appear 1s ease forwards 0.4s;
     padding-left: 10px;
+	
   }
 
   .boutton-comm{
