@@ -1,0 +1,58 @@
+
+@mixin loader{
+    
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      border-top-color: #3498db;
+    }
+  
+    33% {
+      border-top-color:#9356DC ;
+    }
+  
+    66% {
+      border-top-color:#FF79DA ;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      border-top-color:#99E2D0 ;
+     
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+ 
+}
+
+
+@mixin show-content {
+    animation: show-content 0.5s ease-in-out forwards;
+  }
+  @keyframes show-content {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+ 
+  
+  
+  

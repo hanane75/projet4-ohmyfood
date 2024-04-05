@@ -1,4 +1,5 @@
 @import "mixins.scss";
+@import "animations.scss";
 $color_1:  #353535;
 $color_2: #EAEAEA;
 $color_3:#9356DC;
@@ -20,16 +21,56 @@ $background-color_3: white;
 $background-color_4: #99E2D0;
 $background-color_5: #353535;
 
+ /*mise en page de loader */
 body {
+
+	@include loader;
 	display: flex;
 	justify-content: center;
 	margin: 0px;
 	font-family: $font-family_1;
 	width: 100%;
-}
+	.loader-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999; /* Ensure the loader is above other content */
+		opacity: 0; /* Initially hidden */
+		animation: fade-in 0.5s ease-in-out forwards; /* Fade-in animation */
+		
+
+		.loader {
+			border: 8px solid transparent; /* Transparent border */
+			border-top: 8px solid #3498db; /* Blue border (initial color) */
+			border-radius: 50%;
+			width: 100px;
+			height: 100px;
+			animation: spin 1s linear 3; /* Rotation animation */
+			
+		  }
+	  }
+
+	  body.loading .loader-container {
+		animation: fade-out 0.5s ease-in-out forwards; /* Fade-out animation */
+	  }
+	}
 .main-container {
-	width: 100%;
-}
+	
+		width: 100%;
+		 /* Affiche le contenu après un certain délai */
+		 @include show-content;
+	}
+	
+.hidden {
+	display: none; // Caché par défaut
+  }
+ 
 
 /*mise en style du header**/
 header {
@@ -391,10 +432,11 @@ footer {
             width: 30px;
             height: 30px;
             font-size: 30px;
-            position: absolute;
+            text-decoration: none;
             cursor: pointer;
             display: flex;
             align-items: center;
+			color: $color_6;
             
            }
     }
@@ -457,11 +499,9 @@ footer {
 	  &_validate {
         position: absolute;
         text-align: center;
-       
         top: 0;
         width: 100px;
         height: 95px;
-      
         transition: 1s;
         display: flex;
         align-items: center;
@@ -521,21 +561,15 @@ footer {
   }
   
   .entree{
-    margin-bottom: 2.25em;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
+    margin-bottom: 36px;
     padding-left: 10px;
   }
   .plats{
-    margin-bottom: 2.25em;
-    animation-delay: 1s;
-    animation-fill-mode: both;
+    margin-bottom:36px;
     padding-left: 10px;
   }
   .dessert{
     
-    animation-delay: 1.5s;
-    animation-fill-mode: both;
     padding-left: 10px;
   }
 
