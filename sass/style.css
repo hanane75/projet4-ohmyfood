@@ -66,6 +66,7 @@ body .loader-container .loader {
   width: 100%;
   /* Affiche le contenu après un certain délai */
   animation: show-content 0.5s ease-in-out forwards;
+  z-index: 9999;
 }
 @keyframes show-content {
   0% {
@@ -325,7 +326,7 @@ input::placeholder {
 }
 @media screen and (min-width: 1024px) {
   .restaurant-card-content {
-    width: 35%;
+    width: 40%;
   }
 }
 .restaurant-card-content .restaurant-img {
@@ -459,6 +460,7 @@ footer i {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 100px;
 }
 .header-menu .nav-menu {
   display: flex;
@@ -466,6 +468,9 @@ footer i {
   width: 100%;
   gap: 42px;
   justify-content: space-between;
+}
+.header-menu .nav-menu a {
+  text-decoration: none;
 }
 .header-menu .nav-menu i {
   margin-left: 17px;
@@ -500,8 +505,8 @@ footer i {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 30px;
+  padding-left: 20px;
 }
 .menu-resto h1 {
   font-family: "Shrikhand", cursive;
@@ -514,7 +519,7 @@ footer i {
   text-transform: uppercase;
   font-size: 20px;
   border-bottom: solid 3px #99E2D0;
-  width: 5.5%;
+  width: 50px;
   padding-bottom: 8px;
 }
 .menu-card {
@@ -527,34 +532,37 @@ footer i {
   z-index: 0;
   width: 90%;
   box-shadow: -1px 6px 10px 2px rgba(166, 166, 166, 0.34);
+  height: 72px;
 }
 .menu-card_validate {
-  position: absolute;
   text-align: center;
   top: 0;
   width: 100px;
   height: 95px;
-  transition: 1s;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.7s ease-in-out;
+  right: 0;
+  position: relative; /* Assurez-vous que la position est relative pour que la transition fonctionne correctement */
+  overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
 }
 .menu-card_validate i {
-  color: #fff;
+  width: 59px;
+  height: 69px;
+  color: #ffffff;
   font-size: 24px;
+  position: absolute; /* Position absolue pour placer l'icône en dehors de son conteneur d'origine */
+  right: -20px; /* Initialiser l'icône à l'extérieur du conteneur */
+  transition: right 0.5s ease-in-out; /* Ajout d'une transition sur la propriété "right" */
+  transition: right 0.5s ease-in-out, transform 1s ease-in-out;
 }
 .menu-card:hover {
   cursor: pointer;
 }
-.menu-card:hover .menu-card_validate {
-  right: 0px;
-  transition: 0.7s ease-in-out;
-  z-index: 2;
-}
 .menu-card:hover .menu-card_validate i {
-  animation: rotate 0.4s linear;
-  animation-delay: 0.3S;
+  color: #99E2D0;
+  transform: rotate(360deg);
+  right: 0; /* Déplacer l'icône à l'intérieur du conteneur lorsqu'il est survolé */
 }
 .menu-card_content {
   width: 100%;
@@ -574,7 +582,7 @@ footer i {
 }
 .menu-card_text {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .menu-card_text p {
@@ -582,6 +590,8 @@ footer i {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .entree {
@@ -603,7 +613,7 @@ footer i {
 .plats {
   margin-bottom: 36px;
   padding-left: 10px;
-  animation: appear 1s ease forwards 0.2s;
+  animation: appear 1s ease forwards 0.5s;
 }
 @keyframes appear {
   from {
@@ -617,7 +627,7 @@ footer i {
 }
 
 .dessert {
-  animation: appear 1s ease forwards 0.4s;
+  animation: appear 1s ease forwards 1s;
   padding-left: 10px;
 }
 @keyframes appear {
