@@ -15,7 +15,7 @@ $couleur-bouton-survol: lighten(#FF79DA, 10%); // Couleur du bouton au survol
 $ombre-portee-survol: 0 4px 8px rgba(0, 0, 0, 0.3); // Ombre portée au survol
 $font-family_1: "Roboto", sans-serif;
 $font-family_2: "Shrikhand", cursive;
-$background-color_1: #EAEAEA;
+$background-color_1: #F6F6F6;
 $background-color_2: #9356DC;
 $background-color_3: white;
 $background-color_4: #99E2D0;
@@ -40,14 +40,14 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 9999; /* Ensure the loader is above other content */
-		opacity: 0; /* Initially hidden */
-		animation: fade-in 0.5s ease-in-out forwards; /* Fade-in animation */
+		z-index: 9999; 
+		opacity: 0;
+		animation: fade-in 0.5s ease-in-out forwards; 
 		
 
 		.loader {
-			border: 8px solid transparent; /* Transparent border */
-			border-top: 8px solid #3498db; /* Blue border (initial color) */
+			border: 8px solid transparent; 
+			border-top: 8px solid #3498db; 
 			border-radius: 50%;
 			width: 100px;
 			height: 100px;
@@ -180,17 +180,18 @@ input {
 	padding-top: 15px;
 	flex-wrap: wrap;
 	gap: 15px;
-	width: 100%;
+	//width: 100%;
 	padding-bottom: 50px;
 	align-content: center;
+	background-color: $background-color_1;
 	.choix {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
 		height: 72px;
 		border-radius: 20px;
-		padding: 4px 19px;
-		gap: 10px;
+		padding: 4px 30px;
+		gap: 30px;
 		background-color: $background-color_1;
 		box-shadow: 0 4px 10px 0 #d5d5d5;
 		width: 80%;
@@ -208,6 +209,7 @@ input {
 	justify-content: space-evenly;
 	width: 95%;
 	padding-bottom: 10px;
+	padding-left: 10px;
 	margin: auto;
 	gap: 20px;
 	align-items: center;
@@ -247,7 +249,7 @@ input {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	background-color: $background-color_1;
+	
 	padding-bottom: 50px;
 	@media screen and (min-width:1024px){
         align-items: center; 
@@ -285,17 +287,11 @@ input {
 	box-shadow: 5px 5px 10px #DADADA;
 	text-decoration: none;
 	color: $color_6;
+	position: relative; // Ajout de position relative pour contenir les éléments enfants positionnés absolument
 	@media screen and (min-width:1024px){
        width:40%;
     }
-	.restaurant-img {
-		width: 100%;
-		height: 124px;
-		object-fit: cover;
-		border-top-left-radius: 20px;
-		border-top-right-radius: 20px;
-		position: relative;
-	}
+    
 	.markerinfo {
 		display: flex;
 		align-items: center;
@@ -306,11 +302,22 @@ input {
 		background-color: $background-color_4;
 		color: $color_7;
 		font-weight: 500;
+		padding: 5px 10px; 
 		position: absolute;
-		right:40px;
+		top: 10px; // Ajustez cette valeur selon votre préférence pour l'espace par rapport au haut
+        right: 15px; // Ajustez cette valeur selon votre préférence pour l'espace par rapport à la droite
 		z-index: 1;
 	
 	}
+	.restaurant-img {
+		width: 100%;
+		height: 124px;
+		object-fit: cover;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		
+	}
+	
 }
 .card-title-rest {
 	margin: 1px 0px 8px 15px;
@@ -322,15 +329,18 @@ input {
 
 .menu-favorite {
 	height: 32px;
-	width:32px;
+	//width:32px;
 	padding: 0;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end; // Alignement à droite
 	position: relative;
-	overflow: hidden;
-    i{
+	//overflow: hidden;
+   .icon-fill,
+    .icon-empty {
         position: absolute;
+        top: 0;
+        right: 30px; // Positionnement à droite
     }
     .icon-fill {
         opacity: 0;
@@ -509,12 +519,12 @@ footer {
         text-align: center;
         top: 0;
         width: 100px;
-        height: 95px;
+        height: 50px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
 		right: 0;
-		position: relative; /* Assurez-vous que la position est relative pour que la transition fonctionne correctement */
+		position: relative; /* la position est relative pour que la transition fonctionne correctement */
 		overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
     
         i {

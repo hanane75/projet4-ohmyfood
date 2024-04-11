@@ -49,13 +49,13 @@ body .loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure the loader is above other content */
-  opacity: 0; /* Initially hidden */
-  animation: fade-in 0.5s ease-in-out forwards; /* Fade-in animation */
+  z-index: 9999;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
 }
 body .loader-container .loader {
-  border: 8px solid transparent; /* Transparent border */
-  border-top: 8px solid #3498db; /* Blue border (initial color) */
+  border: 8px solid transparent;
+  border-top: 8px solid #3498db;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -105,7 +105,7 @@ header img {
 
 .localisation {
   display: flex;
-  background-color: #EAEAEA;
+  background-color: #F6F6F6;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -137,7 +137,7 @@ header img {
 
 input {
   border: none;
-  background-color: #EAEAEA;
+  background-color: #F6F6F6;
   color: #353535;
   outline: none;
   width: 115px;
@@ -166,7 +166,7 @@ input::placeholder {
   padding: 20px;
   padding-right: 0;
   padding-left: 0;
-  background-color: #EAEAEA;
+  background-color: #F6F6F6;
 }
 .section-menu h2 {
   text-decoration: none;
@@ -210,19 +210,19 @@ input::placeholder {
   padding-top: 15px;
   flex-wrap: wrap;
   gap: 15px;
-  width: 100%;
   padding-bottom: 50px;
   align-content: center;
+  background-color: #F6F6F6;
 }
 .fonctionnement .choix {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 72px;
   border-radius: 20px;
-  padding: 4px 19px;
-  gap: 10px;
-  background-color: #EAEAEA;
+  padding: 4px 30px;
+  gap: 30px;
+  background-color: #F6F6F6;
   box-shadow: 0 4px 10px 0 #d5d5d5;
   width: 80%;
   position: relative;
@@ -238,6 +238,7 @@ input::placeholder {
   justify-content: space-evenly;
   width: 95%;
   padding-bottom: 10px;
+  padding-left: 10px;
   margin: auto;
   gap: 20px;
   align-items: center;
@@ -281,7 +282,6 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #EAEAEA;
   padding-bottom: 50px;
 }
 @media screen and (min-width: 1024px) {
@@ -323,20 +323,12 @@ input::placeholder {
   box-shadow: 5px 5px 10px #DADADA;
   text-decoration: none;
   color: #000;
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
   .restaurant-card-content {
     width: 40%;
   }
-}
-.restaurant-card-content .restaurant-img {
-  width: 100%;
-  height: 124px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  position: relative;
 }
 .restaurant-card-content .markerinfo {
   display: flex;
@@ -348,9 +340,19 @@ input::placeholder {
   background-color: #99E2D0;
   color: #278870;
   font-weight: 500;
+  padding: 5px 10px;
   position: absolute;
-  right: 40px;
+  top: 10px;
+  right: 15px;
   z-index: 1;
+}
+.restaurant-card-content .restaurant-img {
+  width: 100%;
+  height: 124px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .card-title-rest {
@@ -364,16 +366,17 @@ input::placeholder {
 /* mise en style du coeur */
 .menu-favorite {
   height: 32px;
-  width: 32px;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   position: relative;
-  overflow: hidden;
 }
-.menu-favorite i {
+.menu-favorite .icon-fill,
+.menu-favorite .icon-empty {
   position: absolute;
+  top: 0;
+  right: 30px;
 }
 .menu-favorite .icon-fill {
   opacity: 0;
@@ -538,12 +541,12 @@ footer i {
   text-align: center;
   top: 0;
   width: 100px;
-  height: 95px;
+  height: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   right: 0;
-  position: relative; /* Assurez-vous que la position est relative pour que la transition fonctionne correctement */
+  position: relative; /* la position est relative pour que la transition fonctionne correctement */
   overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
 }
 .menu-card_validate i {
