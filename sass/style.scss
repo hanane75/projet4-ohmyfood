@@ -16,61 +16,56 @@ $ombre-portee-survol: 0 4px 8px rgba(0, 0, 0, 0.3); // Ombre portée au survol
 $font-family_1: "Roboto", sans-serif;
 $font-family_2: "Shrikhand", cursive;
 $background-color_1: #F6F6F6;
-$background-color_2: #9356DC;
-$background-color_3: white;
+$background-color_2: $color_3;
+$background-color_3:$color_9;
 $background-color_4: #99E2D0;
-$background-color_5: #353535;
+$background-color_5: $color_1;
 
- /*mise en page de loader */
+/* Afficher le .main-container une fois que le loader est terminé */
+.loader-wrapper.fadeOutDone + .main-container {
+    display: block;
+}
+
+/* Mise en page du loader */
 body {
+    @include loader;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    font-family: $font-family_1;
+    width: 100%;
+}
 
-	@include loader;
-	display: flex;
-	justify-content: center;
-	margin: 0px;
-	font-family: $font-family_1;
-	width: 100%;
-	.loader-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 9999; 
-		opacity: 0;
-		animation: fade-in 0.5s ease-in-out forwards; 
-		
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 3s ease forwards; /* Animation de disparition */
+}
 
-		.loader {
-			border: 8px solid transparent; 
-			border-top: 8px solid #3498db; 
-			border-radius: 50%;
-			width: 100px;
-			height: 100px;
-			animation: spin 1s linear 3; /* Rotation animation */
-			
-		  }
-	  }
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid #ccc;
+    border-top-color: #333;
+    animation: spin 3s linear ; /* Animation du spinner */
+}
 
-	 
-	}
 .main-container {
-	
-		width: 100%;
-		 /* Affiche le contenu après un certain délai */
-		 animation: show-content 0.5s ease-in-out forwards;
-		 @include show-content;
-		 z-index: 9999;
-	}
-	
-.hidden {
-	display: none; // Caché par défaut
-  }
- 
+    width: 100%;
+   // display: none; /* Caché par défaut */
+}
+
+/*.hidden {
+    display: none;} /* Caché par défaut */
 
 /*mise en style du header**/
 header {
@@ -198,11 +193,12 @@ input {
 		gap: 30px;
 		background-color: $background-color_1;
 		box-shadow: 0 4px 10px 0 #d5d5d5;
-		width: 70%;
+		width: 80%;
 		position: relative;
 		flex-basis: 100%;
 		p{
 			font-weight: bold;
+			font-size: 18px;
 		}
 	}
 	
@@ -218,7 +214,7 @@ input {
 	gap: 20px;
 	align-items: center;
 	@media all and (min-width:1024px) {
-			width: 90%;
+			width:80%;
 			flex-direction: row;
 			justify-content: space-between;
 		
@@ -293,7 +289,7 @@ input {
 	color: $color_6;
 	position: relative; // Ajout de position relative pour contenir les éléments enfants positionnés absolument
 	@media screen and (min-width:1024px){
-       width:40%;
+       width:45%;
     }
     
 	.markerinfo {
@@ -511,7 +507,7 @@ footer {
       
       background-color: #fff;
       border-radius: 20px;
-      padding: 15px 20px 0 10px;
+      padding: 15px  0 10px;
       margin-bottom: 15px;
       position: relative;
       overflow: hidden;
@@ -519,7 +515,7 @@ footer {
       width: 90%;
       box-shadow: -1px 6px 10px 2px rgb(166 166 166 / 34%);
 	  height: 72px;
-      
+          padding-left: 20px;
 	  &_validate {
         text-align: center;
         top: 0;

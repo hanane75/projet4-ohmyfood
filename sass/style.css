@@ -1,5 +1,10 @@
 @charset "UTF-8";
-/*mise en page de loader */
+/* Afficher le .main-container une fois que le loader est terminé */
+.loader-wrapper.fadeOutDone + .main-container {
+  display: block;
+}
+
+/* Mise en page du loader */
 body {
   display: flex;
   justify-content: center;
@@ -10,77 +15,50 @@ body {
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    border-top-color: #3498db;
-  }
-  33% {
-    border-top-color: #9356DC;
-  }
-  66% {
-    border-top-color: #FF79DA;
   }
   100% {
     transform: rotate(360deg);
-    border-top-color: #99E2D0;
   }
 }
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-out {
+@keyframes fadeOut {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
-body .loader-container {
+
+.loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  opacity: 0;
-  animation: fade-in 0.5s ease-in-out forwards;
+  animation: fadeOut 3s ease forwards; /* Animation de disparition */
 }
-body .loader-container .loader {
-  border: 8px solid transparent;
-  border-top: 8px solid #3498db;
-  border-radius: 50%;
+
+.loader {
   width: 100px;
   height: 100px;
-  animation: spin 1s linear 3; /* Rotation animation */
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-top-color: #333;
+  animation: spin 3s linear; /* Animation du spinner */
 }
 
 .main-container {
   width: 100%;
-  /* Affiche le contenu après un certain délai */
-  animation: show-content 0.5s ease-in-out forwards;
-  z-index: 9999;
-}
-@keyframes show-content {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
-.hidden {
-  display: none;
-}
-
+/*.hidden {
+    display: none;} /* Caché par défaut */
 /*mise en style du header**/
 header {
   display: flex;
@@ -228,12 +206,13 @@ input::placeholder {
   gap: 30px;
   background-color: #F6F6F6;
   box-shadow: 0 4px 10px 0 #d5d5d5;
-  width: 70%;
+  width: 80%;
   position: relative;
   flex-basis: 100%;
 }
 .fonctionnement .choix p {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .fonctionnement-list {
@@ -249,7 +228,7 @@ input::placeholder {
 }
 @media all and (min-width: 1024px) {
   .fonctionnement-list {
-    width: 90%;
+    width: 80%;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -331,7 +310,7 @@ input::placeholder {
 }
 @media screen and (min-width: 1024px) {
   .restaurant-card-content {
-    width: 40%;
+    width: 45%;
   }
 }
 .restaurant-card-content .markerinfo {
@@ -531,7 +510,7 @@ footer i {
 .menu-card {
   background-color: #fff;
   border-radius: 20px;
-  padding: 15px 20px 0 10px;
+  padding: 15px 0 10px;
   margin-bottom: 15px;
   position: relative;
   overflow: hidden;
@@ -539,6 +518,7 @@ footer i {
   width: 90%;
   box-shadow: -1px 6px 10px 2px rgba(166, 166, 166, 0.34);
   height: 72px;
+  padding-left: 20px;
 }
 .menu-card_validate {
   text-align: center;
