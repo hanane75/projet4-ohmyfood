@@ -344,7 +344,7 @@ input {
     }
     .icon-fill {
         opacity: 0;
-        font-size: 1.6rem;
+        font-size: 25.6px;
         cursor: pointer;
         transition: 0.2s linear;
         z-index: 2;
@@ -475,6 +475,7 @@ footer {
       	border-top-left-radius: 40px;
       	border-top-right-radius: 40px;
       	transform: translate(0px, -60px);
+
         
 
     	}
@@ -500,12 +501,13 @@ footer {
 		border-bottom: solid 3px #99E2D0;
 		width:50px;
 		padding-bottom: 8px;
+		
        }
     }
   
     &-card {
-      
-      background-color: #fff;
+		animation-fill-mode: both;
+      background-color:$color_5;
       border-radius: 20px;
       padding: 15px  0 10px;
       margin-bottom: 15px;
@@ -519,15 +521,15 @@ footer {
 	  &_validate {
         text-align: center;
         top: 0;
-        width: 100px;
-        height: 50px;
+        width:70px;
+        height: 100px;
         display: flex;
         align-items: flex-start;
         justify-content: center;
 		right: 0;
-		position: relative; /* la position est relative pour que la transition fonctionne correctement */
+		position: absolute; 
 		overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
-   
+		transition: 0.7s ease-in-out;
         i {
 			width: 59px;
 			//height: 69px;
@@ -544,23 +546,32 @@ footer {
         .menu-card_validate {
 
 			background-color: #99E2D0;
+			transition: 0.7s ease-in-out;
           i {
 			
 			transform: rotate(360deg);
+			left: 5px;
+			top:40px;
 			right: 0; /* Déplacer l'icône à l'intérieur du conteneur lorsqu'il est survolé */
-          }
+			animation-delay: 0.3S;
+		}
+
         }
       }
       &_content{
           width: 100%;
           transition: 0.8s ease-in-out;
+		  &:hover{
+			width: calc(100% - 100px);
+			transition: 0.7s ease-in-out;
+		   }
       }
       &_title {
         h3 {
           font-family: "Roboto";
           margin: 0;
           overflow: hidden;
-          
+          text-overflow: ellipsis;
         }
         p {
           margin: 0;
@@ -574,15 +585,13 @@ footer {
         display: flex;
 		align-items: flex-start;
         justify-content: space-between;
-        
-       p{
-           width: 100%;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-		  display: flex;
-   		 justify-content: flex-start;
-        }
+        padding-right: 20px;
+        p:nth-child(1){
+			width: 100%;
+		   white-space: nowrap;
+		   overflow: hidden;
+		   text-overflow: ellipsis;
+		 }
         
       }
     }

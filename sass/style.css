@@ -362,7 +362,7 @@ input::placeholder {
 }
 .menu-favorite .icon-fill {
   opacity: 0;
-  font-size: 1.6rem;
+  font-size: 25.6px;
   cursor: pointer;
   transition: 0.2s linear;
   z-index: 2;
@@ -508,7 +508,8 @@ footer i {
   padding-bottom: 8px;
 }
 .menu-card {
-  background-color: #fff;
+  animation-fill-mode: both;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 15px 0 10px;
   margin-bottom: 15px;
@@ -523,14 +524,15 @@ footer i {
 .menu-card_validate {
   text-align: center;
   top: 0;
-  width: 100px;
-  height: 50px;
+  width: 70px;
+  height: 100px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   right: 0;
-  position: relative; /* la position est relative pour que la transition fonctionne correctement */
+  position: absolute;
   overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
+  transition: 0.7s ease-in-out;
 }
 .menu-card_validate i {
   width: 59px;
@@ -546,19 +548,28 @@ footer i {
 }
 .menu-card:hover .menu-card_validate {
   background-color: #99E2D0;
+  transition: 0.7s ease-in-out;
 }
 .menu-card:hover .menu-card_validate i {
   transform: rotate(360deg);
+  left: 5px;
+  top: 40px;
   right: 0; /* Déplacer l'icône à l'intérieur du conteneur lorsqu'il est survolé */
+  animation-delay: 0.3S;
 }
 .menu-card_content {
   width: 100%;
   transition: 0.8s ease-in-out;
 }
+.menu-card_content:hover {
+  width: calc(100% - 100px);
+  transition: 0.7s ease-in-out;
+}
 .menu-card_title h3 {
   font-family: "Roboto";
   margin: 0;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-card_title p {
   margin: 0;
@@ -571,14 +582,13 @@ footer i {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  padding-right: 20px;
 }
-.menu-card_text p {
+.menu-card_text p:nth-child(1) {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .entree {
