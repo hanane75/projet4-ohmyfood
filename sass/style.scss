@@ -21,10 +21,7 @@ $background-color_3:$color_9;
 $background-color_4: #99E2D0;
 $background-color_5: $color_1;
 
-/* Afficher le .main-container une fois que le loader est terminé */
-.loader-wrapper.fadeOutDone + .main-container {
-    display: block;
-}
+
 
 /* Mise en page du loader */
 body {
@@ -58,15 +55,14 @@ body {
     border-top-color: #333;
     animation: spin 3s linear ; /* Animation du spinner */
 }
-
+/* Afficher le .main-container une fois que le loader est terminé */
+.loader-wrapper.fadeOutDone + .main-container {
+    display: block;
+}
 .main-container {
     width: 100%;
-   // display: none; /* Caché par défaut */
+
 }
-
-/*.hidden {
-    display: none;} /* Caché par défaut */
-
 /*mise en style du header**/
 header {
 	display: flex;
@@ -196,9 +192,17 @@ input {
 		width: 80%;
 		position: relative;
 		flex-basis: 100%;
+		i{
+			color: $color_4;
+		}
 		p{
 			font-weight: bold;
 			font-size: 18px;
+		}
+		&:hover{
+			i{
+				color: $color_3;
+			}
 		}
 	}
 	
@@ -220,12 +224,12 @@ input {
 		
 		}
 }
-.icon-color {
+/*.icon-color {
 	color: $color_3;
 }
 .icon-color-1 {
 	color: $color_4;
-}
+}*/
 .fonctionnement-number {
 	display: flex;
 	align-items: center;
@@ -328,48 +332,7 @@ input {
 /* mise en style du coeur */
 
 .menu-favorite {
-	//height: 32px;
-	//width:32px;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end; // Alignement à droite
-	position: relative;
-	//overflow: hidden;
-   .icon-fill,
-    .icon-empty {
-        position: absolute;
-        top: -50px;
-        right: 30px; // Positionnement à droite
-    }
-    .icon-fill {
-        opacity: 0;
-        font-size: 25.6px;
-        cursor: pointer;
-        transition: 0.2s linear;
-        z-index: 2;
-        background: linear-gradient(0deg, #ab5edc 0%, #df6fda 58%);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color:transparent;
-      }
-	.icon-empty {
-		
-		opacity: 1;
-		font-size: 25.6px;
-		cursor : pointer;
-		transition: 0.2s linear;
-		
-	}
-	&:hover {
-		.icon-fill {
-			opacity: 1;
-            color: $color_9;
-		}
-		.icon-empty {
-			opacity: 0;
-		}
-	}
+	@include menu-favorite;
 }
 
 /*Footer Home Page et Menus */
@@ -389,7 +352,7 @@ footer {
 	}
 	.propos {
 		display: flex;
-		width: 100%;
+		//width: 100%;
 		flex-direction: column;
 		gap: 7px;
 		padding-left: 20px;
@@ -455,6 +418,14 @@ footer {
 			color: $color_6;
             
            }
+		   img{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 36px;
+			margin: 14px auto;
+		
+		   }
     }
 	  
   }
@@ -488,13 +459,31 @@ footer {
 	  h1 {
         font-family: "Shrikhand", cursive;
       	}
+		
+     .menu-favorite {
+	@include menu-favorite;
+	
+	.icon-fill,
+  .icon-empty {
+	position: absolute;
+    right: 20px;
+    top: -10px;
+    font-size: 25.6px;
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+      }
 
 
-    	}
+    }
+
+	
+
     &-categorie {
+		
 		opacity: 0;
         transition: opacity 0.5s ease-in-out;
-     
+		
       h2 {
         text-transform: uppercase;
         font-size: 20px;
@@ -514,7 +503,7 @@ footer {
       position: relative;
       overflow: hidden;
       z-index: 0;
-      width: 90%;
+      //width: 90%;
       box-shadow: -1px 6px 10px 2px rgb(166 166 166 / 34%);
 	  height: 72px;
           padding-left: 20px;
@@ -596,21 +585,23 @@ footer {
       }
     }
   
-  }
-  
+}
   .entree{
+	flex: 1;
 	@include appear;
     margin-bottom: 36px;
     padding-left: 10px;
 	animation: appear 1s ease forwards;
   }
   .plats{
+	flex: 1;
 	@include appear;
     margin-bottom:36px;
     padding-left: 10px;
 	animation: appear 1s ease forwards 0.5s;
   }
   .dessert{
+	flex: 1;
 	@include appear;
 	animation: appear 1s ease forwards 1s;
     padding-left: 10px;
@@ -619,8 +610,16 @@ footer {
 
   .boutton-comm{
     @include boutton;
-    margin-left: 100px;
+	margin-left: auto;
     margin-bottom: 50px;
     margin-top: 50px;
+    margin-right: auto;
   }
-  
+
+  /*media queries****/
+
+  @media all  and ((min-width:1024px)) {
+	.submenu{
+		display: flex;
+	}
+  }
