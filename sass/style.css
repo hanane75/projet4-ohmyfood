@@ -491,6 +491,16 @@ footer i {
   border-top-right-radius: 40px;
   transform: translate(0px, -60px);
 }
+@media all and ((min-width: 1024px)) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 634px;
+  }
+}
 .menu-resto {
   display: flex;
   align-items: center;
@@ -713,9 +723,4 @@ footer i {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/*media queries****/
-@media all and ((min-width: 1024px)) {
-  .submenu {
-    display: flex;
-  }
-}/*# sourceMappingURL=style.css.map */
+/*media queries****//*# sourceMappingURL=style.css.map */
