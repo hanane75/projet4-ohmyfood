@@ -9,67 +9,61 @@ body {
 }
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    opacity: 0;
+    z-index: -1;
   }
 }
-@keyframes fadeOut {
+@keyframes bk {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    display: none;
+    z-index: -2;
   }
 }
-@keyframes fadeInOut {
-  from {
-    opacity: 1;
-    z-index: 10;
-  }
-  60% {
-    opacity: 1;
-    z-index: 10;
-  }
-  to {
-    opacity: 0;
-    z-index: -10;
-  }
-}
-
-.loader-wrapper {
+body .block__loader {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOut 4s ease forwards; /* Animation de disparition */
+  height: 100vh;
+  animation: bk 3s ease-in forwards;
+  -moz-animation: bk 3s ease-in forwards;
+  /* Firefox */
+  -webkit-animation: bk 3s ease-in forwards;
+  /* Safari et Chrome */
+  -o-animation: bk 3s ease-in forwards;
+  /* Opera */
 }
-
-.loader {
+body .loader {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 10px solid #9356DC; /* Couleur principale du loader */
   border-top-color: #FF79DA; /* Couleur du dessus du loader */
   border-bottom-color: #99E2D0;
-  animation: spin 3s linear; /* Animation du spinner */
+  z-index: 4;
+  animation: spin 3000ms ease-in forwards;
+  -moz-animation: spin 3000ms ease-in forwards;
+  /* Firefox */
+  -webkit-animation: spin 3000ms ease-in forwards;
+  /* Safari et Chrome */
+  -o-animation: spin 3000ms ease-in forwards;
+  /* Opera */
 }
-
-.main-container {
+body .main-container {
   width: 100%;
-}
-
-/* Afficher le .main-container une fois que le loader est terminé */
-.loader-wrapper.fadeOutDone + .main-container {
-  display: block;
 }
 
 /*mise en style du header**/

@@ -1,41 +1,61 @@
 
 @mixin loader{
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/*@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; display: none; }
-}*/
-
-@keyframes fadeInOut {
-  from {
-    opacity: 1;
-    z-index: 10;
-}
-60% {
-    opacity: 1;
-    z-index: 10;
-}
-to {
-    opacity: 0;
-    z-index: -10;
-}
-}
-
-    
-}
-
-@mixin show-content {
-    
-    @keyframes show-content {
-     
-    }
-  }
-  
  
+@keyframes spin {
+0% {
+  -webkit-transform:rotate(0deg);
+  opacity:1;
+ }
+
+  100% {
+  -webkit-transform:rotate(360deg);
+  opacity:0;
+  z-index:-1;
+
+  }
+
+}
+
+@-webkit-keyframes
+spin {
+
+  0% {
+-webkit-transform:rotate(0deg);
+opacity:1;
+}
+  100% {
+  -webkit-transform:rotate(360deg);
+  opacity:0;
+  z-index:-1;
+}
+}
+@keyframes bk {
+  0% {
+    opacity:1;
+  }
+
+  100% {
+  opacity:0;
+  z-index:-2;
+}
+
+}
+
+@-webkit-keyframes bk {
+  0% {
+    opacity:1;
+  }
+
+  100% {
+  opacity:0;
+  z-index:-2;
+
+  }
+
+}
+   
+}
+
  @mixin appear {
  @keyframes appear {
   from {

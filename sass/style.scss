@@ -1,26 +1,6 @@
 @import "mixins.scss";
 @import "animations.scss";
-$color_1:  #353535;
-$color_2: #EAEAEA;
-$color_3:#9356DC;
-$color_4:  grey;
-$color_5: #ffffff;
-$color_6: #000;
-$color_7: #278870;
-$color_8: #d5d5d5;
-$color_9: white;
-$couleur-coeur: $color_3; // Couleur du cœur rempli
-$couleur-coeur-vide: $color_9; // Couleur du cœur vide
-$couleur-bouton-survol: lighten(#FF79DA, 10%); // Couleur du bouton au survol
-$ombre-portee-survol: 0 4px 8px rgba(0, 0, 0, 0.3); // Ombre portée au survol
-$font-family_1: "Roboto", sans-serif;
-$font-family_2: "Shrikhand", cursive;
-$background-color_1: #F6F6F6;
-$background-color_2: $color_3;
-$background-color_3:$color_9;
-$background-color_4: #99E2D0;
-$background-color_5: $color_1;
-
+@import "variables.scss";
 
 
 /* Mise en page du loader */
@@ -31,41 +11,63 @@ body {
     margin: 0px;
     font-family: $font-family_1;
     width: 100%;
-}
 
-.loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 4s ease forwards; /* Animation de disparition */
-}
 
-.loader {
-	width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 10px solid #9356DC; /* Couleur principale du loader */
-    border-top-color: #FF79DA; /* Couleur du dessus du loader */
-	border-bottom-color: #99E2D0;
-    animation: spin 3s linear ; /* Animation du spinner */
-}
+.block__loader {
+
+	background-color:white;
+  	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display:flex;
+  	-webkit-box-pack:center;
+  	-ms-flex-pack:center;
+  	justify-content:center;
+  	-webkit-box-align:center;
+  	-ms-flex-align:center;
+  	align-items:center;
+	z-index:4;
+	position:fixed;
+  	top: 0;
+  	left:0;
+  	width:100%;
+  	height:100vh;
+  	animation: bk 3s ease-in forwards;
+  	-moz-animation: bk 3s ease-in forwards;
+   /* Firefox */
+  -webkit-animation: bk 3s ease-in forwards;
+  	/* Safari et Chrome */
+  	-o-animation: bk	3s	ease-in	forwards;
+  /* Opera */
+  
+  }
+  
+
+  .loader {
+
+	width:100px;
+  	height:100px;
+  	border-radius:50%;
+  	border:10px solid #9356DC;/* Couleur principale du loader */
+    border-top-color:#FF79DA;/* Couleur du dessus du loader */
+  	border-bottom-color:#99E2D0;
+  	z-index:4;
+  	animation: spin 3000ms ease-in forwards;
+  	-moz-animation: spin 3000ms ease-in forwards;
+  /* Firefox */
+  	-webkit-animation: spin 3000ms ease-in forwards;
+  /* Safari et Chrome */
+  -o-animation: spin 3000ms ease-in forwards;
+  /* Opera */
+  }
+  
 
 .main-container {
     width: 100%;
 
+  
 }
-/* Afficher le .main-container une fois que le loader est terminé */
-.loader-wrapper.fadeOutDone + .main-container {
-    display: block;
-	
 }
+
 /*mise en style du header**/
 header {
 	display: flex;

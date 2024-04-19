@@ -1,0 +1,20 @@
+$color_1:  #353535;
+$color_2: #EAEAEA;
+$color_3:#9356DC;
+$color_4:  grey;
+$color_5: #ffffff;
+$color_6: #000;
+$color_7: #278870;
+$color_8: #d5d5d5;
+$color_9: white;
+$couleur-coeur: $color_3; // Couleur du cœur rempli
+$couleur-coeur-vide: $color_9; // Couleur du cœur vide
+$couleur-bouton-survol: lighten(#FF79DA, 10%); // Couleur du bouton au survol
+$ombre-portee-survol: 0 4px 8px rgba(0, 0, 0, 0.3); // Ombre portée au survol
+$font-family_1: "Roboto", sans-serif;
+$font-family_2: "Shrikhand", cursive;
+$background-color_1: #F6F6F6;
+$background-color_2: $color_3;
+$background-color_3:$color_9;
+$background-color_4: #99E2D0;
+$background-color_5: $color_1;
