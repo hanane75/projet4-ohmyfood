@@ -5,9 +5,24 @@
     100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeOut {
+/*@keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; display: none; }
+}*/
+
+@keyframes fadeInOut {
+  from {
+    opacity: 1;
+    z-index: 10;
+}
+60% {
+    opacity: 1;
+    z-index: 10;
+}
+to {
+    opacity: 0;
+    z-index: -10;
+}
 }
 
     
@@ -16,8 +31,7 @@
 @mixin show-content {
     
     @keyframes show-content {
-      0% { opacity: 0; }
-      100% { opacity: 1; display: block;}
+     
     }
   }
   

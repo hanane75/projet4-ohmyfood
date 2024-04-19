@@ -56,13 +56,15 @@ body {
 	border-bottom-color: #99E2D0;
     animation: spin 3s linear ; /* Animation du spinner */
 }
-/* Afficher le .main-container une fois que le loader est terminé */
-.loader-wrapper.fadeOutDone + .main-container {
-    display: block;
-}
+
 .main-container {
     width: 100%;
 
+}
+/* Afficher le .main-container une fois que le loader est terminé */
+.loader-wrapper.fadeOutDone + .main-container {
+    display: block;
+	
 }
 /*mise en style du header**/
 header {
@@ -422,12 +424,12 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: 100px;
+	//padding-right: 100px;
 	.nav-menu {
 		display: flex;
 		align-items: center;
 		width: 100%;
-		gap: 42px;
+		//gap: 42px;
         justify-content: space-between;
 		a{
 			text-decoration: none;
@@ -444,7 +446,7 @@ footer {
 			color: $color_6;
             
            }
-		   img{
+		   div{
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -563,6 +565,7 @@ footer {
         align-items: flex-start;
         justify-content: center;
 		right: 0;
+
 		position: absolute; 
 		overflow: hidden; /* Cela permettra de cacher l'icône à l'extérieur de son conteneur */
 		transition: 0.7s ease-in-out;
@@ -572,9 +575,11 @@ footer {
           color:$color_5;
           font-size: 24px;
 		  position: absolute; /* Position absolue pour placer l'icône en dehors de son conteneur d'origine */
-			right: -20px; /* Initialiser l'icône à l'extérieur du conteneur */
+			right: -20px;
+			top: 40px; /* Initialiser l'icône à l'extérieur du conteneur */
 			transition: right 0.5s ease-in-out; /* Ajout d'une transition sur la propriété "right" */
 			transition: right 0.5s ease-in-out, transform 1s ease-in-out;
+			
         }
       }
       &:hover {
@@ -584,12 +589,13 @@ footer {
 			background-color: #99E2D0;
 			transition: 0.7s ease-in-out;
           i {
-			
+			overflow: visible;
 			transform: rotate(360deg);
 			left: 5px;
 			top:40px;
 			right: 0; /* Déplacer l'icône à l'intérieur du conteneur lorsqu'il est survolé */
 			animation-delay: 0.3S;
+			
 		}
 
         }
