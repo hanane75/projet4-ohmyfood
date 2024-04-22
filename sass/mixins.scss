@@ -50,11 +50,10 @@
   .icon-empty {
     opacity: 1;
   }
-
   &:hover {
     .icon-fill {
       opacity: 1;
-      color: $color_9; // Assuming $color_9 is defined elsewhere
+      color: $color_9; 
     }
     .icon-empty {
       opacity: 0;

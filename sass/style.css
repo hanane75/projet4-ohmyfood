@@ -236,6 +236,11 @@ input::placeholder {
   font-weight: bold;
   font-size: 16px;
 }
+@media all and (min-width: 1024px) {
+  .fonctionnement .choix p {
+    font-size: 14px;
+  }
+}
 .fonctionnement .choix:hover i {
   color: #9356DC;
 }
@@ -527,6 +532,7 @@ footer i {
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   transform: translate(0px, -80px);
+  padding-bottom: 20px;
 }
 @media all and ((min-width: 1024px)) {
   .menu-container {
