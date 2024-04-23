@@ -1,12 +1,4 @@
 @charset "UTF-8";
-/* Mise en page du loader */
-body {
-  display: flex;
-  justify-content: center;
-  margin: 0px;
-  font-family: "Roboto", sans-serif;
-  width: 100%;
-}
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -26,6 +18,24 @@ body {
     opacity: 0;
     z-index: -2;
   }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Mise en page du loader */
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
 }
 body .block__loader {
   background-color: white;
@@ -242,6 +252,7 @@ input::placeholder {
   }
 }
 .fonctionnement .choix:hover i {
+  cursor: pointer;
   color: #9356DC;
 }
 
@@ -266,12 +277,6 @@ input::placeholder {
   }
 }
 
-/*.icon-color {
-	color: $color_3;
-}
-.icon-color-1 {
-	color: $color_4;
-}*/
 .fonctionnement-number {
   display: flex;
   align-items: center;
@@ -706,16 +711,6 @@ footer i {
   animation: appear 1s ease forwards;
   padding-right: 10px;
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @media all and ((min-width: 1024px)) {
   .entree {
     width: 150%;
@@ -729,16 +724,6 @@ footer i {
   animation: appear 1s ease forwards 0.5s;
   padding-right: 10px;
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @media all and ((min-width: 1024px)) {
   .plats {
     width: 150%;
@@ -750,16 +735,6 @@ footer i {
   animation: appear 1s ease forwards 1s;
   padding-left: 10px;
   padding-right: 10px;
-}
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 @media all and ((min-width: 1024px)) {
   .dessert {

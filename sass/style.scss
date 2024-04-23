@@ -5,7 +5,7 @@
 
 /* Mise en page du loader */
 body {
-    @include loader;
+   
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -221,6 +221,7 @@ margin-right: 40px;
 		}
 		&:hover{
 			i{
+				cursor: pointer;
 				color: $color_3;
 			}
 		}
@@ -246,12 +247,6 @@ margin-right: 40px;
 }
 		}
 
-/*.icon-color {
-	color: $color_3;
-}
-.icon-color-1 {
-	color: $color_4;
-}*/
 .fonctionnement-number {
 	display: flex;
 	align-items: center;
@@ -647,7 +642,7 @@ footer {
 }
   .entree{
 	flex: 1;
-	@include appear;
+	
     margin-bottom: 36px;
     padding-left: 10px;
 	animation: appear 1s ease forwards;
@@ -658,7 +653,7 @@ footer {
   }
   .plats{
 	flex: 1;
-	@include appear;
+	
     margin-bottom:36px;
     padding-left: 10px;
 	animation: appear 1s ease forwards 0.5s;
@@ -670,7 +665,7 @@ footer {
   }
   .dessert{
 	flex: 1;
-	@include appear;
+	
 	animation: appear 1s ease forwards 1s;
     padding-left: 10px;
 	padding-right: 10px;

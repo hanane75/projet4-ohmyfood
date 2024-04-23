@@ -1,1 +1,30 @@
-/*# sourceMappingURL=animations.css.map */
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes bk {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -2;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=animations.css.map */
