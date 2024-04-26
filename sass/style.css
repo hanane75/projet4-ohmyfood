@@ -664,7 +664,6 @@ footer i {
 }
 .menu-card:hover .menu-card_validate i {
   overflow: visible;
-  transform: rotate(360deg);
   left: 5px;
   top: 40px;
   right: 0; /* Déplacer l'icône à l'intérieur du conteneur lorsqu'il est survolé */
